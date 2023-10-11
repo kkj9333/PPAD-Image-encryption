@@ -1,8 +1,8 @@
 function C = Algorithm(P,Ma,Mb)
-%ALGORITHM1 ÊäÈë Ã÷ÎÄÍ¼ÏñP(rxcxse)¾ØÕó£» 
-%Êä³öÖĞ¼ä¼ÓÃÜÍ¼ÏñT(rxc)
-%   ´Ë´¦ÏÔÊ¾ÏêÏ¸ËµÃ÷
-%Èç¹ûMaMbVaVbÃ»ÓĞ½øĞĞ¹ı³õÊ¼»¯ ÏÈ½øĞĞÕûÊı»¯
+%ALGORITHM1 è¾“å…¥ æ˜æ–‡å›¾åƒP(rxcxse)çŸ©é˜µï¼› 
+%è¾“å‡ºä¸­é—´åŠ å¯†å›¾åƒT(rxc)
+%   æ­¤å¤„æ˜¾ç¤ºè¯¦ç»†è¯´æ˜    
+%å¦‚æœMaMbVaVbæ²¡æœ‰è¿›è¡Œè¿‡åˆå§‹åŒ– å…ˆè¿›è¡Œæ•´æ•°åŒ–
 % S=
 %P=[1,2,3,4,5;6,7,8,9,10;11,12,13,14,15;16,17,18,19,20;];%4*5
 %Ma=[0x16,0x33,0x53,0x7A,0x99,0xAB,0xC4,0xD2,0x61,0x4F,...
@@ -29,12 +29,12 @@ for sei=1:se
     P2(:,:,sei)=permute_parallel(P(:,:,sei),hh2,gg2');
 end
 P=P2;
-%¿ªÊ¼²¢ÁĞ²Ù×÷ ÕâÀïÔİÊ±ÏÈÓÃfor´úÌæ
+%å¼€å§‹å¹¶åˆ—æ“ä½œ è¿™é‡Œæš‚æ—¶å…ˆç”¨forä»£æ›¿
 for i =1:r
     for sei=1:se
     %P(i,:,sei)=mysort(P(i,:,sei),Ma(i,:));
-    P(i,:,sei)=circshift(P(i,:,sei),h(i),2); %½øĞĞÏòyouÒÆÎ»
-    %ĞĞÇ°ÏòÀ©É¢
+    P(i,:,sei)=circshift(P(i,:,sei),h(i),2); %è¿›è¡Œå‘youç§»ä½
+    %è¡Œå‰å‘æ‰©æ•£
     P1(i,1,sei)=mod(double(P(i,1,sei))+Ma(i,1),256);
     for t=2:c
         P1(i,t,sei)=mod(double(P(i,t,sei))+P1(i,t-1,sei)+Ma(i,t),256);
@@ -48,13 +48,13 @@ for i =1:r
     end
 end
 P=T;
-%¿ªÊ¼²¢ÁĞ²Ù×÷ ÕâÀïÔİÊ±ÏÈÓÃfor´úÌæ
+%å¼€å§‹å¹¶åˆ—æ“ä½œ è¿™é‡Œæš‚æ—¶å…ˆç”¨forä»£æ›¿
 for j =1:c
     
     for sei=1:se
     %P(:,j,sei)=transpose(mysort(P(:,j,sei),Mb(:,j)));
-    P(:,j,sei)=circshift(P(:,j,sei),g(j)); %°ÑÖÃÂÒºóµÄÕâÒ»ÁĞ½øĞĞÏòÏÂÒÆÎ»
-    %ÁĞÇ°ÏòÀ©É¢
+    P(:,j,sei)=circshift(P(:,j,sei),g(j)); %æŠŠç½®ä¹±åçš„è¿™ä¸€åˆ—è¿›è¡Œå‘ä¸‹ç§»ä½
+    %åˆ—å‰å‘æ‰©æ•£
     P2(1,j,sei)=mod(double(P(1,j,sei))+Mb(1,j),256);
     for t=2:r
         P2(t,j,sei)=mod(double(P(t,j,sei))+P2(t-1,j,sei)+Mb(t,j),256);
