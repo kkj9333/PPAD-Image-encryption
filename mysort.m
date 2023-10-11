@@ -1,7 +1,7 @@
 function retlist = mysort(sortlist,indexlist)
-%°´ĞòÁĞsort P(i,:)=sort(P(i,:),Ma(i,:));
-%   ÏÈÀ©Õ¹Îª´øĞòºÅ¾ØÕóÈ»ºóxx
-L=length(sortlist);%sortlist±ØĞëºÍindexlistÒ»Ñù³¤
+%æŒ‰åºåˆ—sort P(i,:)=sort(P(i,:),Ma(i,:));
+%   å…ˆæ‰©å±•ä¸ºå¸¦åºå·çŸ©é˜µç„¶åå†è¿›è¡Œæ’åº
+L=length(sortlist);%sortlistå¿…é¡»å’Œindexlistä¸€æ ·é•¿
 indexmat=zeros(L,2);
 retlist=zeros(1,L);
 for i=1:L
@@ -12,6 +12,6 @@ indexmat=sortrows(indexmat);
 for i=1:L
     retlist(i)=sortlist(indexmat(i,2));
 end
-    %retlist=circshift(retlist,h,2); %°ÑÖÃÂÒºóµÄÕâÒ»ÁĞ½øĞĞÏòÏÂÒÆÎ»
+    %retlist=circshift(retlist,h,2); %æŠŠç½®ä¹±åçš„è¿™ä¸€åˆ—è¿›è¡Œå‘ä¸‹ç§»ä½
 end
 
