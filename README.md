@@ -1,11 +1,5 @@
-# PPAD_Image_encryption
- Image encryption&decrption By PPAD
-
- # PPAD_Image_encryption
- Image encryption&decrption By PPAD
- 
-## Introduction
- The image encryption and decryption algorithm implemented by Matlab includes mechanisms such as confusion scrambling and diffusion, chaotic mapping, and round encryption, mainly used for encrypting and decrypting images while ensuring a certain degree of robustness
- 
-## organizations
-北理工网安密码技术与数据安全研究所
+# PPAD_图像加解密算法
+## 简介
+Matlab实现的图像加解密算法，包含混淆置乱和扩散，混沌映射以及轮加密等机制，主要用于加解密图像同时保证一定的鲁棒性。
+## 组织机构
+**北理工网安密码技术与数据安全研究所**
