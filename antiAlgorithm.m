@@ -16,6 +16,7 @@ gg2=Mb(2,:);
 %开始并列操作 这里暂时先用for代替
 for j =c:-1:1
     for sei=1:se
+	% 数组反转
     P(:,j,sei)=fliplr(P(:,j,sei));
     for t=r:-1:2
         %计算出 P1(2-r,j)

@@ -14,6 +14,7 @@ function C = Algorithm(P,Ma,Mb)
 %Ma=double(Ma)./1000000;Mb=double(Mb)./1000000;Va=double(Va)./1000000;Vb=double(Vb)./1000000;
 
 [r,c,se]=size(P);
+% 构建初始化矩阵
 T=zeros(r,c,se);
 P1=zeros(r,c,se);
 P2=zeros(r,c,se);
