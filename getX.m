@@ -1,6 +1,6 @@
 function X = getX(initialkey,L)
-%GETX ´Ë´¦ÏÔÊ¾ÓĞ¹Ø´Ëº¯ÊıµÄÕªÒª initialkeyÊÇÒ»¸öÊı×é 240bit L±íÊ¾ĞòÁĞ³¤
-%   ´Ë´¦ÏÔÊ¾ÏêÏ¸ËµÃ÷
+%GETX æ­¤å¤„æ˜¾ç¤ºæœ‰å…³æ­¤å‡½æ•°çš„æ‘˜è¦ initialkeyæ˜¯ä¸€ä¸ªæ•°ç»„ 240bit Lè¡¨ç¤ºåºåˆ—é•¿
+%  ç”¨äºè®¡ç®—æ··æ²Œæ˜ å°„çš„å‚æ•°ï¼Œå¹¶æ ¹æ®è¿™äº›å‚æ•°è°ƒç”¨æ··æ²Œæ˜ å°„å‡½æ•°
 e=(initialkey(1)+initialkey(2)+initialkey(3)+initialkey(4)+initialkey(5))/(255*5);
 u=3.99+0.01*(initialkey(6)+initialkey(7)+initialkey(8)+initialkey(9)+initialkey(10))/(255*5);
 X0(1)=(initialkey(11)+initialkey(12)+initialkey(13)+initialkey(14)+initialkey(15))/(255*5);
