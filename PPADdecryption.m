@@ -1,5 +1,5 @@
 function P = PPADdecryption(C,initialkey,R)
-%PPADdecryption ´Ë´¦ÏÔÊ¾ÓĞ¹Ø´Ëº¯ÊıµÄÕªÒª
+%PPADdecryption æ­¤å¤„æ˜¾ç¤ºæœ‰å…³æ­¤å‡½æ•°çš„æ‘˜è¦
 
 %Step1
 useRoundkey=false;
@@ -9,12 +9,12 @@ Roundkeyarray=roundkeygenerate(initialkey,R);
 end
 [r,c,se]=size(C);
 
-%Step2 ÕâÀï¸ù¾İÇé¿öÑ¡ÔñÖ±½ÓÓÃ³õÊ¼ÃÜÔ¿»òÕßÂÖÃÜÔ¿
+%Step2 è¿™é‡Œæ ¹æ®æƒ…å†µé€‰æ‹©ç›´æ¥ç”¨åˆå§‹å¯†é’¥æˆ–è€…è½®å¯†é’¥
 isjishu=mod(r*c,2);
 X=getX(initialkey,r*c/2+isjishu);
 Xarray=zeros(R,4,r*c/2+isjishu);
 if(useRoundkey)
-    %r=1³õÊ¼ÃÜÔ¿²»Ê¹ÓÃ
+    %r=1åˆå§‹å¯†é’¥ä¸ä½¿ç”¨
     for rr=2:R+1
         X=getX(Roundkeyarray(rr,:),r*c/2+isjishu);
         %X=getX(reshape(Roundkeyarray(rr,:),length(Roundkeyarray(rr,:))),r*c);
@@ -22,16 +22,17 @@ if(useRoundkey)
     end
 end
 
+%reshape
 Ma=reshape(floor(mod([X(1,1:r*c/2) X(2,1:r*c/2+isjishu)]*power(10,6),256)),[r,c]);
 Mb=reshape(floor(mod([X(3,1:r*c/2) X(4,1:r*c/2+isjishu)]*power(10,6),256)),[r,c]);
-%½âÃÜµü´úRÂÖ
-P=double(C);%½âÃÜ¹ı³ÌÖĞ±ØĞëÏÈÓÃË«¸¡µãÊı
+%è§£å¯†è¿­ä»£Rè½®
+P=double(C);%è§£å¯†è¿‡ç¨‹ä¸­å¿…é¡»å…ˆç”¨åŒæµ®ç‚¹æ•°
 
 for i=R:-1:1
     C=P;
     if useRoundkey
         
-    X=reshape(Xarray(i,:,:),[sizeX,r*c/2+isjishu]);%ÕâÀïÖ±½ÓÊ¹ÓÃ4ÁË
+    X=reshape(Xarray(i,:,:),[sizeX,r*c/2+isjishu]);%è¿™é‡Œç›´æ¥ä½¿ç”¨4äº†
 Ma=reshape(floor(mod([X(1,1:r*c/2) X(2,1:r*c/2+isjishu)]*power(10,6),256)),[r,c]);
 Mb=reshape(floor(mod([X(3,1:r*c/2) X(4,1:r*c/2+isjishu)]*power(10,6),256)),[r,c]);
     end
